@@ -1,0 +1,149 @@
+/* App.css - Premium Animations and Effects for MEB Maarif Modeli Asistanı */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+    border-color: rgba(108, 99, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 101, 132, 0.45);
+    border-color: rgba(255, 101, 132, 0.7);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Page Loading Animations */
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-up-form {
+  animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-up-results {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.4s ease forwards;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Card Transitions & Hover */
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.2);
+}
+
+/* Button Hover Effects */
+.btn-premium {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-premium:hover {
+  transform: scale(1.02);
+}
+.btn-premium:active {
+  transform: scale(0.98);
+}
+
+/* Shimmer Effect on Gradient Buttons */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-shimmer:hover::after {
+  left: 100%;
+}
+
+/* Premium Spinner (48px Gradient Loader) */
+.premium-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #6C63FF, #FF6584);
+  -webkit-mask: repeating-conic-gradient(#000 0 0) content-box, repeating-conic-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 1s linear infinite;
+}
+
+/* Flashcards 3D Flip */
+.flashcard-3d {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flashcard-hover-scale {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flashcard-hover-scale:hover {
+  transform: scale(1.02);
+}
